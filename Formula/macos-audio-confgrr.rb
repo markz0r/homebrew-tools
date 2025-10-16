@@ -9,6 +9,7 @@ class MacosAudioConfgrr < Formula
   depends_on xcode: :build
 
   def install
+    system "mkdir", "-p", ".build"
     system "xcrun", "swiftc", "-O", "-o", ".build/macos-audio-confgrr", "Sources/main.swift"
     bin.install ".build/macos-audio-confgrr"
 
